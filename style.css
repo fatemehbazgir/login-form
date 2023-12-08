@@ -32,7 +32,15 @@ body{
 .wrapper .form-box.login{
     left: 0;
     padding: 0 60px 0 40px;
- }
+}
+.wrapper .form-box.login .animation{
+    transform: translateX(0);
+    transition: 0.7s ease;
+}
+.wrapper.active .form-box.login .animation{
+    transform: translateX(-120%);
+    transition-delay: calc(0.1s * var(--i));
+}
 .wrapper .form-box.register{
     right: 0;
     padding: 0 40px 0 60px;
