@@ -35,16 +35,38 @@ body{
 }
 .wrapper .form-box.login .animation{
     transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
     transition: 0.7s ease;
+    transition-delay: calc(0.1s * var(--j));
 }
 .wrapper.active .form-box.login .animation{
     transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(10px);
     transition-delay: calc(0.1s * var(--i));
 }
 .wrapper .form-box.register{
     right: 0;
     padding: 0 40px 0 60px;
-    display: none;
+    pointer-events: none;
+}
+.wrapper.active .form-box.register{
+    pointer-events: auto;
+}
+.wrapper .form-box.register .animation{
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: 0.7s ease;
+    transition-delay: calc(0.1s * var(--j));
+}
+
+.wrapper.active .form-box.register .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(0.1s * var(--i));
 }
 .form-box h2{
     font-size: 32px;
@@ -160,12 +182,42 @@ body{
     text-align: right;
     padding: 0 40px 60px 150px;
 }
+.wrapper .info-text.login .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition: 0.7s ease;
+    transition-delay: calc(0.1s * var(--j));
+}
+.wrapper.active .info-text.login .animation{
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(0.1s * var(--i));
+}
 .wrapper .info-text.register{
     left: 0;
     text-align: left;
     padding: 0 150px 60px 40px;
-    display: none;
+    pointer-events: none;
 }
+.wrapper.active .info-text.register{
+    pointer-events: auto;
+}
+.wrapper .info-text.register .animation{
+    transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: 0.7s ease;
+    transition-delay: calc(0.1s * var(--j));
+}
+.wrapper.active .info-text.register .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(0.1s * var(--i));
+}
+
 .info-text h2{
     font-size: 36px;
     color: #fff;
@@ -185,8 +237,13 @@ body{
     background: linear-gradient(45deg,#081b29,#0ef);
     border-bottom: 3px solid #0ef;
     transform: rotate(10deg) skewY(40deg);
-    /* transform: rotate(0deg) skewY(0deg); */
     transform-origin: bottom right;
+    transition: 1.5s ease;
+    transition-delay: 1.6s;
+}
+.wrapper.active .bg-animate{
+    transform: rotate(0deg) skewY(0deg);
+    transition-delay: 0.5s;
 }
 .wrapper .bg-animate2{
     position: absolute;
@@ -196,7 +253,12 @@ body{
     height: 700px;
     background:#081b29;
     border-top: 3px solid #0ef;
-    /* transform: rotate(-11deg) skewY(-41deg); */
     transform: rotate(0deg) skewY(0deg);
     transform-origin: bottom left;
+    transition: 1.5s ease;
+    transition-delay: 0.5s;
+}
+.wrapper.active .bg-animate2{
+    transform: rotate(-11deg) skewY(-41deg);
+    transition-delay: 1.2s;
 }
